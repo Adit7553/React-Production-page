@@ -33,7 +33,6 @@ export default function SelectPlantApiCall() {
         dispatch(SelectedPlant(getPlantId))
     }
 
-    console.log(plantData);
   return (
     <>
        <div className="col-lg-3 col-md-3">

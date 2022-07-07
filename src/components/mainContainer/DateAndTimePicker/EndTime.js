@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import DateTimePicker from 'react-datetime-picker';
 import {useSelector, useDispatch} from 'react-redux';
-import { ToDate } from '../../../../Redux/reducers/filterDataBoxReducer';
+import { ToDate } from '../../../Redux/reducers/filterDataBoxReducer';
 
 export default function EndTime() {
 

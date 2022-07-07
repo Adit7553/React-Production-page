@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import DateTimePicker from 'react-datetime-picker';
-import { FromDate, ToDate } from '../../../../Redux/reducers/filterDataBoxReducer';
+import { FromDate, ToDate } from '../../../Redux/reducers/filterDataBoxReducer';
 import {useSelector, useDispatch} from 'react-redux';
 
 
