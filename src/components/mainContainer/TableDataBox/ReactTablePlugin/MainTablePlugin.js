@@ -1,9 +1,9 @@
 import React,{useState, useEffect} from 'react'
 import { loaderBoxReducer } from '../../../../Redux/reducers/loaderDataBoxReducer';
-import '../../MainContainer.css'
+import '../../Style/MainStyle.css'
 import DataTable from 'react-data-table-component';
 import axios from 'axios';
-import EditDataBox from './EditDataBox';
+import EditDataBox from '../EditDataBoxModal/EditDataBox';
 import { useSelector, useDispatch } from 'react-redux';
 
 export default function MainTablePlugin() {
@@ -172,7 +172,6 @@ export default function MainTablePlugin() {
     className='table'
     // fixedHeader
     fixedHeaderScrollHeight='450px'
-    //highlightOnHover
     subHeader
     subHeaderComponent={
         <input type="text"

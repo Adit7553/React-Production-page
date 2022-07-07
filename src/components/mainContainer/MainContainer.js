@@ -1,41 +1,21 @@
 import React,{useState} from 'react'
-import './MainContainer.css'
-import ReactLoaderOverlay from './TableDataBox/ReactTablePlugin/ReactLoaderOverlay';
+import './Style/MainStyle.css'
+import ReactLoader from './ReactLoaderPlugin/ReactLoader';
 import { useSelector, useDispatch } from 'react-redux'
-import PathAddressTopBox from './PathAddressTopBox'
+import PathAddressTopBox from './PathAdressTopBox/PathAddressTopBox'
 import MainPageTopHeader from './MainPageTopHeader/MainPageTopHeader'
 import AddNewDataBox from './AddNewDataBox/AddNewDataBox'
 import FilterDataBox from './FilterDataBox/FilterDataBox'
 import MainTablePlugin from './TableDataBox/ReactTablePlugin/MainTablePlugin'
-import axios from 'axios'
-import { fetchedDataReducer } from '../../Redux/reducers/fetchedDataBoxReducer'
+import FetchButton from './FetchButton/FetchButton';
+
 
 export default function MainContainer() {
 
     const dispatch = useDispatch()
 
-    /// user input data in filter section(FROM REDUX REDUCER) , these perameters will be used in table API
-    const SelectedPlantByUser = useSelector((state)=> state.filterFormData.SelectedPlantByUser)
-     const SelectedLineByUser = useSelector((state)=> state.filterFormData.SelectedLineByUser)
-     const startTime = useSelector((state)=> state.filterFormData.startTime)
-    const endTime = useSelector((state)=> state.filterFormData.endTime)
-
-
-    /////When user filter data and click on fetch button
-    const handleFatchBtn = async()=>{
-        if(startTime || endTime || SelectedPlantByUser || SelectedLineByUser){
-            const fetchedResponse = await axios.get(`http://mm.thirdeye-ai.com/pplan?startDate=${startTime}&endDate=${endTime}&plantId=${SelectedPlantByUser}&lineId=${SelectedLineByUser}`)
-            const fetchedData = fetchedResponse.data;
-            dispatch(fetchedDataReducer(fetchedData))
-            if(fetchedData.length === 0 || fetchedData.length > 0){
-                
-            }  
-        }
-    }
-
-
 //////State to open and close Add data modal box
-    const [openAddNewModel, setOpenAddNewModel] = useState(false);
+     const [openAddNewModel, setOpenAddNewModel] = useState(false);
    
     // if sidebar is in compactMode , then maincontect bar truns into expendview
     const sideBarStatus = useSelector((state)=> state.sideBarToggleBox.sidebar)
@@ -64,19 +44,15 @@ export default function MainContainer() {
                             <FilterDataBox/>                           
                             </div>
                         </div>
-                        <div className="col-lg-2 col-md-2">
-                            <label>&nbsp;</label>
-                            <button onClick={handleFatchBtn} className="btn btn-primary btn-block">Fetch</button>
-                        </div>
+                        <FetchButton/>
                         </div>
                         <MainTablePlugin/>  
-                        <ReactLoaderOverlay/> 
+                        <ReactLoader/> 
                     </div>
                 </div>
             </div>
         </div>
     </div>   
-    
     {openAddNewModel && <AddNewDataBox CloseModel={setOpenAddNewModel} />}
   </section>
   

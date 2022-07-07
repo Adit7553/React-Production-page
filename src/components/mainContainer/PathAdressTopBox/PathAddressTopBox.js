@@ -1,5 +1,5 @@
 import React from 'react'
-import './MainContainer.css'
+import '../Style/MainStyle.css'
 
 export default function PathAddressTopBox() {
   return (
