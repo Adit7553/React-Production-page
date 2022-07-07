@@ -1,0 +1,94 @@
+/* ================= main header
+       Top Bar ====================*/
+
+
+header.mainHeader {
+    background: #fff;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  header.mainHeader .navbar-brand {
+    width: 210px;
+    text-align: center;
+    margin-right: 0;
+  }
+  
+  header.mainHeader .navbar-brand img {
+    height: 40px;
+  }
+  
+  header.mainHeader nav.navbar {
+    background-color: #ffffff !important;
+    padding: 0;
+  }
+  
+  header.mainHeader .navbar-nav .dropdown-menu{
+    position: absolute !important;
+  }
+  
+  header.mainHeader nav.navbar .mainMenuToggleBtn {
+    background: #f2f6fa;
+    color: #000;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    min-width: 50px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  header.mainHeader .navbar-light .navbar-nav .nav-link {
+    background: #f2f6fa;
+    color: #000;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    min-width: 50px;
+    text-align: center;
+  }
+  
+  header.mainHeader .navbar-light .navbar-nav .nav-link.dropdown-toggle::after {
+    margin: 0;
+  }
+  
+  header.mainHeader nav.navbar .mainMenuToggleBtn:hover,
+  header.mainHeader .navbar-light .navbar-nav .nav-link:hover,
+  header.mainHeader .navbar-light .navbar-nav .nav-link:focus {
+    background: #085aa6;
+    color: #fff;
+  }
+  
+  #mobileMenuToggleBtn{
+    display: none;
+  }
+  
+  header.mainHeader ul.nav-right{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .dropdown-item.active, .dropdown-item:active {
+    background-color: #085aa6;
+  }
+   
+  #subMenuBar1  {
+    background: #fff;
+    display: none;
+  }
+  
+  #subMenuBar2  {
+    background: #fff;
+    display: block;
+  }
+
+  .dropdown-item{
+    color: #085aa6 ;
+     background-color: #fff;
+  }

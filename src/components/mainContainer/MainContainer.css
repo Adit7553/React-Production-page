@@ -1,0 +1,205 @@
+/* ============= Main Content Style ============== */
+
+.popUpFormFields {
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px -1px rgba(0,0,0,.5);
+    margin-bottom: 10px;
+}
+*{
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+     font-size : 14px; 
+    
+}
+
+
+    
+.mainContent {
+    position: absolute;
+    left: 260px;
+    right: 0;
+    top: 50px;
+    height: calc(100vh - 50px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/* [data-column-id="name"].rdt_TableCol {
+  background-color: orange;
+} */
+
+.ModelBoxStyle{
+    position: absolute;
+    left : 100px;
+    right : 100px;
+    top: 5px;
+    bottom: 50px; 
+}
+.expendView {
+    position: absolute;
+    left: 50px;
+    right: 0;
+    top: 50px;
+    height: calc(100vh - 50px);
+    overflow-x: hidden;
+    overflow-y: auto;  
+}
+
+.statusBar {
+    background: #f2f6fa;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+}
+
+.statusBar h6.pageTitle {
+    margin: 0;
+    display: inline-block;
+}
+
+.statusBar h6.pageTitle span {
+    color: #aaa;
+}
+
+.devider {
+    margin: 0 2px;
+}
+
+.realTimeProcessing {
+    position: absolute;
+    right: 50px;
+    top: 0px;
+    width: auto;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    border: 1px solid#eee;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.realTimeProcessing i{
+    color: #00e402;
+    font-size: 20px;
+}
+
+.processingStatus {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 50px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    border: 1px solid#eee;
+    cursor: pointer;
+    padding: 11px 0px;
+}
+
+.box {
+    background: #fff;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,.2);
+    margin-bottom: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+
+/* This style to  react-bootstrap Pagination module */
+.visually-hidden{
+    display: none !important;
+}
+
+.box.box-default .box-header {
+    background: rgba(8, 90, 166, .1);
+}
+
+.box-header {
+    padding: 8px 15px;
+}
+
+.box-header .box-title {
+    margin: 5px;
+}
+
+.box.box-default .box-header h6 {
+    padding: 7px 0px 0;
+}
+
+.box-body {
+    padding: 10px 15px;
+    min-height: 50px;
+}
+
+
+.modal-header {
+    background: #085aa6;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.modal-header h4 {
+    font-size: 20px;
+}
+
+.modal-header button {
+    color: #fff !important;
+    opacity: 1 !important;
+}
+.modal-header .close{
+    outline: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

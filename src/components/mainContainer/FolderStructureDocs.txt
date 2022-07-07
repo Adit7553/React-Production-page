@@ -1,0 +1,20 @@
+~ Production planning page
+    ---TopBar
+    ---SideBar
+    ---mainContainer
+       ---MainContainer.js 
+       ---MainContainer.css 
+       ---PathaddressTopBox.js
+       ---AddNewDataBox
+          ---AddNewDataBox.js
+       ---FilterDataBox
+          ---FilterDataBox.js
+       ---MainTableTopHeader
+          ---MainTableTopHeader.js
+       ---TableDataBox
+          ---ReactTablePlugin
+                ---EditDataBox.js 
+                ---MainTablePlugin.js 
+                ---ReactLoaderOverLAy.js
+          
+    
