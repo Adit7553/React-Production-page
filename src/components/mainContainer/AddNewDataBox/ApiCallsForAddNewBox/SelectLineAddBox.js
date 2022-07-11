@@ -1,32 +1,30 @@
 import React,{useState, useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { loaderBoxReducer } from '../../../Redux/reducers/loaderDataBoxReducer'
-import { SelectedLine } from '../../../Redux/reducers/filterDataBoxReducer'
-
+import { loaderBoxReducer } from '../../../../Redux/reducers/loaderDataBoxReducer'
+import { SelectedLineInAddBox } from '../../../../Redux/reducers/AddNewDataBoxReducer'
 import axios from 'axios'
 
 
-export default function SelectLineApiCall(props) {
+export default function SelectLineAddBox() {
 
     const dispatch = useDispatch()
 
-    const SelectedPlantByUser = useSelector((state)=> state.filterFormData.SelectedPlantByUser)
     const SelectedPlantInAddnewBox = useSelector((state)=> state.AddNewFormData.SelectedPlantInAddBoxByUser)
     
    
 
-    const [lineData, setLineData] = useState([])
-    const [selectedLine, setSelectedLine] = useState("")
+    const [addlineData, setAddLineData] = useState([])
+    const [addselectedLine, setAddSelectedLine] = useState("")
 
 ///// calling Line api whenever page loaded and when user select any plant
     useEffect(()=>{
         const getLineApi = async()=>{
             try {
                 dispatch(loaderBoxReducer(false)) 
-                const response = await axios.get(`http://mm.thirdeye-ai.com/machine/info?companyId=JBMGroup&plantId=${SelectedPlantByUser}`)
+                const response = await axios.get(`http://mm.thirdeye-ai.com/machine/info?companyId=JBMGroup&plantId=${SelectedPlantInAddnewBox}`)
                 const getLineData = response.data;
                 const getUniqueLineOnly = [...new Map(getLineData.map((item)=> [item["lineId"], item])).values()]; /// to get unique valu of line
-                setLineData(getUniqueLineOnly)
+                setAddLineData(getUniqueLineOnly)
                 dispatch(loaderBoxReducer(false))
             } catch (error) {
                 alert("An error occured while feching Line API");
@@ -34,23 +32,23 @@ export default function SelectLineApiCall(props) {
             }
         }
         getLineApi();
-    },[SelectedPlantByUser])
+    },[SelectedPlantInAddnewBox])
 
 /////to get input selection value of line
     const getSelectedLineFunc = (e)=>{
         const getLineId = e.target.value
-        setSelectedLine(getLineId)
-        dispatch(SelectedLine(getLineId))
+        setAddSelectedLine(getLineId)
+        dispatch(SelectedLineInAddBox(getLineId))
     }
 
   return (
     <div className="col-lg-3 col-md-3">
             <div className="form-group">
                 <label>Select Line</label>
-                <select onChange={getSelectedLineFunc} value={selectedLine} className="form-control">
+                <select onChange={getSelectedLineFunc} value={addselectedLine} className="form-control">
                    <option value="" >all</option>
                    {
-                    lineData.map((data) => (
+                    addlineData.map((data) => (
                         <option key={data._id} value={data.lineId}>{data.lineId}</option>
                     ))
                     

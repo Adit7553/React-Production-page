@@ -3,6 +3,7 @@ import sidebarToggleReducer  from './reducers/sidebarToggleReducer'
 import filterDataBoxReducer from './reducers/filterDataBoxReducer'
 import fetchedDataBoxReducer from './reducers/fetchedDataBoxReducer'
 import loaderDataBoxReducer from './reducers/loaderDataBoxReducer'
+import AddNewDataBoxReducer from './reducers/AddNewDataBoxReducer'
 
 
 export const store = configureStore({
@@ -10,6 +11,7 @@ export const store = configureStore({
         sideBarToggleBox : sidebarToggleReducer,
         filterFormData : filterDataBoxReducer,
         fetchedDataBox : fetchedDataBoxReducer ,
-        loaderBox : loaderDataBoxReducer   
+        loaderBox : loaderDataBoxReducer ,
+        AddNewFormData : AddNewDataBoxReducer
     }
 })

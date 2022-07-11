@@ -1,17 +1,16 @@
 import React,{useState, useEffect} from 'react'
 import { useDispatch } from 'react-redux'
-import { loaderBoxReducer } from '../../../Redux/reducers/loaderDataBoxReducer';
-import {SelectedPlant} from '../../../Redux/reducers/filterDataBoxReducer';
-import { SelectedPlantInAddBox } from '../../../Redux/reducers/AddNewDataBoxReducer';
+import { loaderBoxReducer } from '../../../../Redux/reducers/loaderDataBoxReducer';
+import { SelectedPlantInAddBox } from '../../../../Redux/reducers/AddNewDataBoxReducer';
 import axios from 'axios'
-import SearchBoxFeature from './SearchBoxFeature';
 
-export default function SelectPlantApiCall(props) {
+
+export default function SelectPlantAddBox() {
 
     const dispatch = useDispatch()
 
-    const [plantData, setPlantData] = useState([])
-    const [selectedPlant, setSelectedPlant] = useState("")
+    const [addPlantData, setAddPlantData] = useState([])
+    const [addselectedPlant, setAddSelectedPlant] = useState("")
 
 //// calling plant api whenever page loaded
     useEffect(()=>{
@@ -19,7 +18,7 @@ export default function SelectPlantApiCall(props) {
             try {
                dispatch(loaderBoxReducer(true)) 
                 const res =  await axios.get("http://mm.thirdeye-ai.com/plantInfo?i4Usage=true")
-                 setPlantData(res.data)
+                 setAddPlantData(res.data)
                  dispatch(loaderBoxReducer(false))
             } catch (error) {
                 alert("An error occured while feching plant api", error);
@@ -31,8 +30,8 @@ export default function SelectPlantApiCall(props) {
 
     const getSelectedPlantFunc = (e)=>{
         const getPlantId = e.target.value
-        setSelectedPlant(getPlantId)
-            dispatch(SelectedPlant(getPlantId))
+        setAddSelectedPlant(getPlantId)
+            dispatch(SelectedPlantInAddBox(getPlantId))
     }
 
   return (
@@ -40,11 +39,11 @@ export default function SelectPlantApiCall(props) {
        <div className="col-lg-3 col-md-3">
             <div className="form-group">
                 <label>Select Plant</label>
-                <select onChange={getSelectedPlantFunc} value={selectedPlant} className=" form-control" >
+                <select onChange={getSelectedPlantFunc} value={addselectedPlant} className=" form-control" >
                  <option value=""  >all</option> 
                   
                  {
-                    plantData.map((Data) => (
+                    addPlantData.map((Data) => (
                         <option key={Data._id} value={Data.plantCode}>{Data.plantName}</option>
                     ))
                 } 

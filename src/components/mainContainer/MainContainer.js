@@ -24,14 +24,14 @@ export default function MainContainer() {
    
    <>
   <section id="mainContent" className={sideBarStatus ? "mainContent" : "expendView"}>
-         <PathAddressTopBox/>
+         <PathAddressTopBox parentAddress = "Dashboard" mainAddress="Production Planning"/>
     <div className="container-fluid">
         <div className="row">
             <div className="col-md-12">
                 <div className="box box-default">
                     <div className="box-header">
                         <div className="row">    
-                        <MainPageTopHeader/>
+                        <MainPageTopHeader title="Production Planning"/>
                         <div className="col-md-6 text-right">
                             <button onClick={()=> setOpenAddNewModel(true)} className="btn btn-primary"><i className="fa fa-plus"></i> Add New</button>
                         </div>

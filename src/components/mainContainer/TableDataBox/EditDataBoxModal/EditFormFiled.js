@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
-import SelectLineApiCall from '../../ApiCalls/SelectLineApiCall'
-import SelectMachineApiCall from '../../ApiCalls/SelectMachineApiCall'
-import SelectPlantApiCall from '../../ApiCalls/SelectPalntApiCall'
+// import SelectLineApiCall from '../../ApiCalls/SelectLineApiCall'
+// import SelectMachineApiCall from '../../ApiCalls/SelectMachineApiCall'
+// import SelectPlantApiCall from '../../ApiCalls/SelectPalntApiCall'
 
 export default function EditFormFiled({closeEditModel, editAction}) {
 
@@ -27,9 +27,9 @@ const handleOnChange =(e)=>{
   return (
    <>
      <div className="row">
-                    <SelectPlantApiCall/>
+                    {/* <SelectPlantApiCall/>
                     <SelectLineApiCall/>
-                    <SelectMachineApiCall/>
+                    <SelectMachineApiCall/> */}
                     <div className="col-md-3">
                         <div className="form-group">
                             <label>&nbsp;</label>

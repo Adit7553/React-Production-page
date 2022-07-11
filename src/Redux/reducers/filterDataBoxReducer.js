@@ -19,7 +19,8 @@ const initialState = {
     endTime : toToday,
     SelectedPlantByUser : "",
     SelectedLineByUser : "",
-    SelectedMachineByUser : ""
+    SelectedMachineByUser : "",
+    SelectedPartByUser : ""
 }
 
 export const filterDataBoxReducer = createSlice({
@@ -37,14 +38,11 @@ export const filterDataBoxReducer = createSlice({
         },
         SelectedLine : (state, actions) =>{
             state.SelectedLineByUser = actions.payload
-        },
-        SelectedMachine : (state, actions) =>{
-            state.SelectedMachineByUser = actions.payload
-        },
+        }
 
     }
 
 })
 
-export const {FromDate, ToDate, SelectedPlant, SelectedLine, SelectedMachine} = filterDataBoxReducer.actions
+export const {FromDate, ToDate, SelectedPlant, SelectedLine} = filterDataBoxReducer.actions
 export default filterDataBoxReducer.reducer

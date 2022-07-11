@@ -60,13 +60,13 @@ export default function MainTablePlugin() {
      //and when user search something it will show matched result in table
     useEffect(() => {
         const searchResult = data.filter((recievedData) => { 
-               return  (String(recievedData.toolId).toLowerCase().match(search.toLowerCase())) || 
-                        recievedData.planningId.toLowerCase().match(search.toLowerCase()) ||
-                        recievedData.partId.toLowerCase().match(search.toLowerCase()) ||
-                        recievedData.quantityPlanned.toString().match(search.toLowerCase()) ||
-                        (String(recievedData.machineId).toLowerCase().match(search.toLowerCase())) ||
-                        recievedData.startDate.toLowerCase().match(search.toLowerCase()) ||
-                        recievedData.endDate.toLowerCase().match(search.toLowerCase())        
+               return  (String(recievedData.toolId).toLowerCase().includes(search.toLowerCase())) || 
+                        recievedData.planningId.toLowerCase().includes(search.toLowerCase()) ||
+                        recievedData.partId.toLowerCase().includes(search.toLowerCase()) ||
+                        recievedData.quantityPlanned.toString().includes(search.toLowerCase()) ||
+                        (String(recievedData.machineId).toLowerCase().includes(search.toLowerCase())) ||
+                        recievedData.startDate.toLowerCase().includes(search.toLowerCase()) ||
+                        recievedData.endDate.toLowerCase().includes(search.toLowerCase())        
           }); 
           setSearchedData(searchResult)
        },[search])
@@ -159,7 +159,9 @@ export default function MainTablePlugin() {
                     }} aria-hidden="true"></i>
                 },
         ]; 
-         
+        
+        
+
   return (
 <>
     {/* REACT DATA-TABLE-PLUGIN FEATURES */}
